@@ -15,7 +15,7 @@ import time
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '123'
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qavyutqahmfakv:e4bab570adf1f9a2c422ee7cffb769f74e4c135bd2f441eb873ada766a1f0e75@ec2-54-77-40-202.eu-west-1.compute.amazonaws.com:5432/dcb65l28fjeomf"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://bxsjvfdahkgaxd:e567bbace8c09ac93b534e9fd3f998ffc082c76324706af301243faa2aef4611@ec2-52-30-159-47.eu-west-1.compute.amazonaws.com:5432/dcvqq4a779rmg2"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 Bootstrap(app)
 db = SQLAlchemy(app)
