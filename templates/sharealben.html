@@ -1,0 +1,41 @@
+{% extends "navbarext.html"%}
+<head>
+    <title> Share Alben</title>
+  </head>
+{% block content %}
+{%if berechtigt == "0"%}
+<h3 style="color:red"> Du hast dem User bereits eins der ausgewählten Alben geteilt, versuchs bitte nochmal!</h3>
+{%endif%}
+{%if i==1 %}
+    <h2>{{i}} Album verfügbar</h2>
+{%endif%}
+{%if i!=1 %}
+    <h2>{{i}} Alben verfügbar</h2>
+{%endif%}
+<form class="form-album" method="POST" action="/sharealben">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-6" style="width:auto; height: auto; max-width: 100%; max-height: 100%;  ">
+    
+    {%for j in range(0,i)%}
+        <div class="col" style="background-color:#95d5d2; margin-right: 0px;">
+            
+            <a href="{{url_for('album',seite=bildis[j]) }}"> 
+            <img src="{{url_for('static',filename=thumbnailpfad[j]) }}" class="img-thumbnail" alt="" style="max-height: 50%;">
+            <input type="checkbox" id="{{j}}" name="selection" value="{{j}}"/>
+            </a>
+            <h5 style="text-align: left;"> Titel: {{titel[j]}}</h5>
+            <h6 style="text-align: left;"> Caption: {{caption[j]}}</h6>
+        </div>
+    {%endfor%}
+
+    
+</div>
+
+<div class="uploadform"> 
+    <h6>Gib hier den Namen der Person ein mit welcher du die ausgewählten Alben teilen möchtest</h6>
+    <p>{{ form.friendname(placeholder="friendname")  }}</p>
+    <p><button class="btn" type="submit" style="margin-top: 0%;" >Album für User freigeben </button></p>
+    <h6> <p> <a href="hochladen">Hier</a> kannst du deiner Galerie noch mehr Bilder hinzufügen </p></h6> 
+
+    </div>
+</form>
+{% endblock %}

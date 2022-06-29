@@ -1,0 +1,34 @@
+{% extends "navbarext.html"%}
+{%block title%} Deine Galerie {%endblock%}
+{% import "bootstrap/wtf.html" as wtf %}
+<head>
+  <title> Galerie</title>
+</head>
+{% block content %}
+    <h2> Willkommen in deiner Galerie, {{current_user.username}} !</h2>
+
+    <h4 > Du hast aktuell {{i}} Bilder in deiner Galerie</h4>
+    <div class="container" >
+        <form class="form-album" method="POST" action="">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6" style="width:auto; max-width: 120%; max-height: 120%;  ">
+                {%for j in range(0,i)%}
+                    <div class="col" style="background-color:#95d5d2; margin-right: 0px;">
+                        <img src="{{url_for('static',filename=bilder[j]) }}" class="img-thumbnail" alt="" style="max-height: 50%;">
+                        <input type="checkbox" id="{{j}}" name="selc" value="{{j}}">
+                        </div>
+                {%endfor%}
+                
+                </div>
+              </div>
+    {{ form.hidden_tag() }}
+    <div class="uploadform"> 
+    <h6> Gib hier einen Titel für dein neues Fotoalbum ein. </h6>
+    <p>{{ form.title  }}</p>
+    <h6>Gib hier eine Beschreibung für dein neues Fotoalbum ein.</h6>
+    <p>{{ form.description  }}</p>
+    <button class="btn" type="submit" >Album erstellen </button>
+    <h6> <p> <a href="hochladen">Hier</a> kannst du deiner Galerie noch mehr Bilder hinzufügen </p></h6> 
+    </form>
+    </div>
+{% endblock %}
+

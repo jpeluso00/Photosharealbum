@@ -1,0 +1,11 @@
+{% extends "navbarext.html"%}
+<head>
+    <title> success</title>
+</head>
+{% block content %}
+
+<h1> Dein Fotoalbum mit dem Namen  {{ title }} ist erfolgt.</h1>
+<h1> Klicke <a href="{{url_for('alben', bildis = bildis )}}"> hier </a> um zu deinen Alben zu gelangen.</h1>
+<p> Klicke <a href= "/hochladen"> hier </a> um weitere Bilder hochzuladen</p>
+<p> Oder klicke <a href= "/Galerie"> hier </a> um zu deiner Galerie zu gelangen</p>
+{% endblock %}

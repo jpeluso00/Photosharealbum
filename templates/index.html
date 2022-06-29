@@ -1,0 +1,40 @@
+{% extends "navbarext.html"%}
+
+
+{% block content %}
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner" id="home">
+          <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/start1.jpg')}}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='images/start2.jpg')}}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='images/start3.jpg')}}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <p></p>
+      <h4> Wir sind <span class="text-contrast">PHOTO<span class="text-highlight">SHARING </span></span><br>
+         Du hast Platz Probleme mit den Bildern auf deinem Handy? <br>
+         Du willst von überall auf deine Bilder zugreifen können? <br>
+        Du willst deine Bilder in sicheren Händen wissen? <br>
+        Oder willst du deine Bilder mit Freunden und Familie Teilen? <br>
+        So oder so sind wir von Photo-Memory die richtige Wahl für dich.<br>
+        Mit uns sind all diese Funktionen und vieles Mehr auf einer Seite möglich.<br>
+        Keine Komplexe Anmeldung, keine Kosten, kein Aufwand! Versuche es jetzt <a href="/login"> hier</a></h4><br>
+{% endblock %}

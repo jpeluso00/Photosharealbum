@@ -1,0 +1,69 @@
+<head>
+    <title>Konto</title>
+</head>
+{% extends "navbarext.html"%}
+
+{% block content %}
+
+<h1> Willkommen, {{ current_user.username }} </h1>
+<h1> Deine Übersicht über die Timeline:</h1>
+<div class="timeline">
+<div class="timeline1"> 
+    <h1>Kürzlich von dir erstellte Alben:</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5" style="width:auto; max-width: 120%; max-height: 120%;  ">
+        {%if hjk >= 5%}
+            {%for j in range(hjk-5,hjk)%}
+                <div class="col" style="background-color:#95d5d2; margin-right: 0px;">
+                    <a href="/album{{timealben[j]}}">
+                    <img src="{{url_for('static',filename=timepfad[j]) }}" class="img-thumbnail" alt="" style="max-height: 50%;">
+                </a>
+                    <h5 style="text-align: left;"> Titel: {{timetitel[j]}}</h5>
+                    <h6 style="text-align: left;"> Caption: {{timecaption[j]}}</h6>
+                    </div>
+        {%endfor%}
+        {%endif%}
+        {%if kl==1 %}
+            {%for j in range(0,hjk)%}
+                <div class="col" style="background-color:#95d5d2; margin-right: 0px;">
+                    <a href="/album{{timealben[j]}}">
+                    <img src="{{url_for('static',filename=timepfad[j]) }}" class="img-thumbnail" alt="" style="max-height: 50%;">
+                    </a>
+                    <h5 style="text-align: left;"> Titel: {{timetitel[j]}}</h5>
+                    <h6 style="text-align: left;"> Caption: {{timecaption[j]}}</h6>
+                </div>
+        {%endfor%}
+        {%endif%}
+        
+                </div>
+                </div>
+    <div class="timeline2"> 
+        <h1>Kürzlich mit dir geteilte Bilder:</h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5" style="width:auto; max-width: 120%; max-height: 120%;  ">
+        {%if hsjk >= 5%}
+            {%for j in range(hsjk-5,hsjk)%}
+                <div class="col" style="background-color:#95d5d2; margin-right: 0px;">
+                <a href="/album{{timesalben[j]}}">
+                <img src="{{url_for('static',filename=timespfad[j]) }}" class="img-thumbnail" alt="" style="max-height: 50%;">
+                </a>
+                <h5 style="text-align: left;"> Titel: {{timestitel[j]}}</h5>
+                <h6 style="text-align: left;"> Caption: {{timescaption[j]}}</h6>
+                <h6 style="text-align: left;"> Von: {{originsowner[j]}}</h6>
+                </div>
+                {%endfor%}
+            {%endif%}
+        {%if ksl==1 %}
+        {%for j in range(0,hsjk)%}
+            <div class="col" style="background-color:#95d5d2; margin-right: 0px;">
+            <a href="/album{{timesalben[j]}}">
+            <img src="{{url_for('static',filename=timespfad[j]) }}" class="img-thumbnail" alt="" style="max-height: 50%;">
+            </a>
+            <h5 style="text-align: left;"> Titel: {{timestitel[j]}}</h5>
+            <h6 style="text-align: left;"> Caption: {{timescaption[j]}}</h6>
+            <h6 style="text-align: left;"> Von: {{originsowner[j]}}</h6>
+            </div>
+            {%endfor%}
+        {%endif%}
+        </div>
+    </div>
+    </div>
+{% endblock %}

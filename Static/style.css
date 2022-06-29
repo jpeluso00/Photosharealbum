@@ -1,0 +1,247 @@
+.Galerie {
+    width: 18rem;
+    height: 200px;
+    border: 1px solid #6db784;
+    display: flex;
+    justify-content: left;
+} 
+.timeline{
+    display: flex
+}
+.timeline1{
+    width:1300px;
+    height: 500px;
+    margin-top: 2%;
+    max-width: 80%;
+    max-height: 10%;
+}
+.timeline2{
+    width:1300px;
+    height: 500px;
+    margin-top: 2%;
+    max-width: 80%;
+    max-height: 10%;
+    margin-left: 5%;
+    float: right;
+}
+.container {
+    padding: 0px;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    max-width: 80%;
+    width: auto;
+}
+.form#share {
+    display: flex;
+    justify-content: left;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 1%;
+    margin-right: 20%;
+}
+.Login {
+    padding: 0px;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    max-width: 45%;
+    justify-content: space-between;
+    display: flex;
+    width: auto;
+    box-sizing: border-box;
+}
+body {
+    background-color: #95d5d2;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.avatar {
+    color: #ffffff;
+    border-radius: 100%;
+    background-color: #6db784;
+    padding: 1vw;
+    margin-right: 1vw;
+    width: 4vw;
+    height: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg{
+    width: 88%;
+    margin: 7px 3px;
+    box-sizing: border-box;
+}
+.opening {
+    margin-top: 2%;
+    margin-bottom: 10%;
+}
+
+.AlbumCarousel{
+    max-width: 75%;
+    display: flex;
+    justify-content: flex-start;
+}
+.reg2 {
+    width: 44%;
+    margin: 7px 3px;
+    box-sizing: border-box;
+    display:inline-block;
+}
+button.btn {
+    background-color: #6db784;
+    color: #ffffff;
+    margin-top: 2%;
+    width: auto;
+    min-width: 15%;
+    max-width: 50%;
+}
+
+.navbar{
+    background-color: #95d5d2;
+}
+.header-image {
+    width: 100%;
+    display: block;
+    height: 900px;
+    object-fit: cover;
+    object-position: 50% 15%;
+}
+.div {
+    background-color: #95d5d2;
+}
+.nav {
+    background-color: #95d5d2;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+.headline {
+    padding-top: 60px;
+    color: #ffffff;
+    background-color: #95d5d2;
+    flex: 1;
+}
+
+.link-container {
+    max-width: 10%;
+    padding: 16px;
+}
+.base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    margin-left: 16px;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+.text-contrast {
+    color:#ffffff;
+    background-color: rgb(109, 183, 132);
+}
+.text-container {
+    padding: 8px;
+}
+.image-container {
+    background-color: #95d5d2;
+    padding: 16px;
+}
+.maps-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+.maps-right {
+    margin-left: 16px;
+    width: 30%;
+}
+.maps-frame {
+    border: 0;
+    height: 350px;
+    width: 70%;
+}
+.d-flex {
+    width: 70%;
+}
+.legal-content {
+    display:table-row;
+    background-color: #95d5d2;
+}
+summary::marker{
+    content:"";
+}
+.legal-text {
+    margin-right: 16px;
+}
+.nav-abstand {
+    display: flex;
+    justify-content: space-between;
+}
+.carousel-inner#alben {
+    margin-bottom: 2%;
+    max-width: 100%;
+    max-height: 1100px;
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 15%;
+    display: left;
+}
+.carousel-caption {
+    position: absolute;
+    top:-0.5%;
+    
+ }
+ .capt-cont{
+    background-color: rgba(109, 183, 132,0.5);
+ }
+.Kommentar {
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 15%;
+    height: 100%;
+    max-height: 1100;
+    max-width: 20%;
+    float: center;
+
+}
+.container-kommentar {
+    margin-top: 1%;
+    margin-right: 5%;
+    width: 15%;
+    height: auto;
+    max-height: 1100;
+    max-width: 20%;
+    float: center;
+
+}
+.btn#comm{
+    margin-left: 2%;
+    height: auto;
+}
+.kommentar-album{
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 15%;
+    height: auto;
+    max-height: 1100;
+    max-width: 20%;
+    float: center;
+}
+.carousel-inner#home {
+    max-width: 100%;
+    max-height: 900px;
+    object-fit: cover;
+    object-position: 50% 15%;
+    display: flex;
+
+}
+
+
+
+
+
+

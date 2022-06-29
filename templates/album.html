@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album {{m}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
+    <link href={{ url_for('static', filename='style.css')}} rel='stylesheet' type='text/css'> 
+</head>
+<body>
+
+    <div id="AlbumCarousel" class="carousel slide carousel-fade" data-bs-ride="false">
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#AlbumCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Foto 1"></button>
+          {%for j in range (1,m)%}
+            <button type="button" data-bs-target="#AlbumCarousel" data-bs-slide-to="{{j}}" aria-label="Foto {{j+1}}"></button>
+            {%endfor%}
+        </div>
+
+        <div class="carousel-inner" id="alben" >
+          <div class="carousel-item active">
+            <img src="{{ url_for('static', filename=pfade[0])}}" class="d-block w-100" >
+            <div class="carousel-caption d-none d-md-block">
+                <h5><span class="capt-cont">{{titel}}</span></h5>
+                <p><span class="capt-cont">{{caption}}</span></p>
+                <p> <span class="capt-cont">Bild 1 von {{m}}</span></p>
+              </div>
+          </div>
+          
+          {%for y in range (1,m)%}
+            <div class="carousel-item" >
+                <img src="{{ url_for('static', filename=pfade[y])}}" class="d-block w-100"  >
+                <div class="carousel-caption d-none d-md-block">
+                    <h5> <span class="capt-cont">{{titel}} </span></h5>
+                    <p><span class="capt-cont">{{caption}}</span></p>
+                    <p> <span class="capt-cont"> Bild {{y+1}} von {{m}}</span></p>
+                  </div>
+                </div>
+            {%endfor%}
+        </div>
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#AlbumCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#AlbumCarousel" data-bs-slide="next" >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        
+      </div>
+      <div class="container-kommentar">
+        <form class="" method="POST" action="/album{{seite}}">
+        <details>
+        <summary><h3> <span class="text-contrast"> Kommentare zu dem Album     {{z}}</span></h3></span></summary>
+          {%for l in range(0,z)%}
+          <details>  
+          <summary> <h4> {{user_info[l]}} kommentierte am {{pubdate[l]}}    </h4></summary>
+            <pre> {{comment_text[l]}}</li>
+          </details>
+            {%endfor%}
+          </details>
+        
+          {{ form.hidden_tag() }}
+          <h6> Gib hier deinen Kommentar für das Fotoalbum ein: </h6>
+          {{ form.kommentar(placeholder="Dein Kommentar") }}
+          <button class="btn" type="submit"> Kommentar veröffentlichen </button>
+        </form>
+      </div>
+
+        
+      <p>
+        <h6 > <a href="/alben">Zurück</a> zur Alben Auswahl</h6>
+        <h6> Gebe das Album für <a href="/sharealben"> Freunde und Familie </a> frei! </h6>
+      </p>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    </body>
+    
+    </html>

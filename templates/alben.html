@@ -1,0 +1,28 @@
+{% extends "navbarext.html"%}
+<head>
+    <title> alben</title>
+  </head>
+{% block content %}
+{%if i==1 %}
+    <h2>{{i}} Album verfügbar</h2>
+{%endif%}
+{%if i!=1 %}
+    <h2>{{i}} Alben verfügbar</h2>
+{%endif%}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-6" style="width:auto; max-width: 100%; max-height: 100%;  ">
+    {%for j in range(0,i)%}
+        <div class="col" style="background-color:#95d5d2; margin-right: 0px;">
+
+            <a href="{{url_for('album',seite=bildis[j]) }}">
+                <caption> </caption><img src="{{url_for('static',filename=thumbnailpfad[j]) }}" class="img-thumbnail" alt="" style="max-height: 50%;">
+                
+            </a>
+            <h5 style="text-align: left;"> Titel: {{titel[j]}}</h5>
+            <h6 style="text-align: left;"> Caption: {{caption[j]}}</h6>
+        </div>
+    {%endfor%}
+</div>
+
+
+
+{% endblock %}

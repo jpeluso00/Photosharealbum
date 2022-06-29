@@ -1,0 +1,19 @@
+{% extends "navbarext.html"%}
+<link rel="stylesheet" href="{{url_for('.static', filename='singnin.css')}}">
+<head>
+    <title> Upload</title>
+  </head>
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+    <div id="Bildupload">
+        <div class="container"> 
+            <form class="upload" method="POST" enctype="multipart/form-data" action="#">
+                {{ form.hidden_tag() }}
+                {{ form.file }}
+                <h2 class="form-signin-heading"> Bitte laden Sie ihr Bild hoch</h2>
+                <button class="btn" type="submit"> Hochladen </button>
+            </form>
+        </div>  
+        </form>
+      </div>
+{% endblock %}
