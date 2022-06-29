@@ -470,4 +470,4 @@ def sharedalben():
             thumbnailpfad.append(low.Upload.pfad)
     return render_template("sharedalben.html", i=i, thumbnailpfad = thumbnailpfad, bildis=bildis, titel=titel, caption = caption, usernames = usernames)
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(debug=True)
